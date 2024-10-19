@@ -65,17 +65,11 @@ function getStyle(index) {
   const isInTimeRange = isWithinTimeRange(start_schedule.value[index], end_schedule.value[index]);
   const isLargerRange = isLargerTimeRange(start_schedule.value[index], end_schedule.value[index]);
   if (isLargerRange) {
-    return {
-      'background-color': '#3daee920',
-      'font-weight': 450
-    };
+    return 'h-16 w-16 rounded-2 backdrop-blur-lg mt-2 ml-2 flex items-center justify-center flex-grow bg-b';
   } else if (isInTimeRange) {
-    return {
-      'background-color': '#93cee97f',
-      'font-weight': 800
-    };
+    return 'h-16 w-16 rounded-2 backdrop-blur-lg mt-2 ml-2 flex items-center justify-center flex-grow bg-bd';
   }
-  return {};
+  return 'h-16 w-16 rounded-2 backdrop-blur-lg mt-2 ml-2 flex items-center justify-center flex-grow';
 }
 
 function getTextStyle(index) {
@@ -99,16 +93,14 @@ updateSchedule()
   <div class="flex mr-2" @click="updateSchedule">
     <!-- 显示当前星期几 -->
     <div
-      class="h-16 w-16 rounded-2 backdrop-blur-lg mt-2 ml-2 flex items-center justify-center flex-grow"
-      style="background-color: #3daee920">
+      class="h-16 w-16 rounded-2 backdrop-blur-lg mt-2 ml-2 flex items-center justify-center flex-grow bg-b">
       <a class="text-white text-3xl font-450">{{ dayName }}</a>
     </div>
 
     <!-- 显示今天的课程，并判断时间区间 -->
     <div
-      class="h-16 w-16 rounded-2 backdrop-blur-lg mt-2 ml-2 flex items-center justify-center flex-grow"
-      v-for="(item, index) in today_schedule" :key="index"
-      :style="getStyle(index)">
+      :class="getStyle(index)"
+      v-for="(item, index) in today_schedule" :key="index">
       <a class="text-white text-3xl"
          :style="getTextStyle(index)">
         {{ item }}
@@ -118,4 +110,11 @@ updateSchedule()
 </template>
 
 <style scoped>
+
+.bg-b{
+  background: url("/src/assets/blue-light.png") !important;
+}
+.bg-bd{
+  background: url("/src/assets/blue-dark.png") !important;
+}
 </style>

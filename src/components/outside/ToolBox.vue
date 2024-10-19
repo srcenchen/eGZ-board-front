@@ -69,7 +69,7 @@ function getDayDiff(targetDate) {
         <div
           class="h-32 rounded-2 backdrop-blur-xl ml-2 flex items-center justify-center flex-grow"
           v-for="index in count_down_list.length">
-          <a class="text-white text-24 font-500">距离</a>
+          <a class="text-white text-24 font-500">距</a>
           <a class="text-white text-24 font-900">{{ count_down_list[index - 1].Event }}</a>
           <a class="text-white text-24 font-500">还有</a>
           <a class="text-white text-24 font-900">{{ count_down_list[index - 1].left }}</a>

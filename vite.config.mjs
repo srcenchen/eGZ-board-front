@@ -68,12 +68,12 @@ export default defineConfig({
     host: '0.0.0.0',
     proxy: {
       "/api": {
-        target: "http://192.168.2.47:5020/api",
+        target: "http://192.168.111.103:5020/api",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
       },
       "/resource": {
-        target: "http://192.168.2.47:5020/resource",
+        target: "http://192.168.111.103:5020/resource",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/resource/, ""),
       },

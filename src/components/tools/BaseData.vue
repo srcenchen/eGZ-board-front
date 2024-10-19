@@ -215,8 +215,7 @@ onMounted(() => {
   <div>
     <div class="w-full bg-transparent backdrop-blur-xl rounded-4 flex pr-2 mb-2">
       <div
-        class="h-20 w-16 rounded-2 backdrop-blur-xl mt-2 mb-2 ml-2 flex items-center justify-center flex-grow"
-        style="background-color: #3daee920"
+        class="h-20 w-16 rounded-2 backdrop-blur-xl mt-2 mb-2 ml-2 flex items-center justify-center flex-grow bg-b "
         v-for="index in nowDate.length">
         <a class="text-white text-4xl  font-600">{{ nowDate[index - 1] }}</a>
       </div>
@@ -226,7 +225,7 @@ onMounted(() => {
       <div
         class="h-16 rounded-2 backdrop-blur-xl ml-2 flex items-center justify-center flex-grow"
         v-for="index in count_down_list.length">
-        <a class="text-white text-4xl font-500">距离</a>
+        <a class="text-white text-4xl font-500">距</a>
         <a class="text-white text-4xl font-900">{{ count_down_list[index - 1].Event }}</a>
         <a class="text-white text-4xl font-500">还有</a>
         <a class="text-white text-6xl font-900">{{ count_down_list[index - 1].left }}</a>
@@ -263,5 +262,7 @@ onMounted(() => {
 </template>
 
 <style scoped>
-
+.bg-b{
+  background: url("/src/assets/blue-light.png") !important;
+}
 </style>
